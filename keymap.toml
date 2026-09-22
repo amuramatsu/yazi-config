@@ -1,0 +1,85 @@
+# A TOML linter such as Tombi can use this schema to validate your config.
+# If you encounter any problems, please file an issue at https://github.com/yazi-rs/schemas.
+
+#:schema https://yazi-rs.github.io/schemas/keymap.json
+
+[mgr]
+prepend_keymap = [
+  { on = "!",     run = 'shell "$SHELL" --block', for = "unix",
+    desc = "Open $SHELL here" },
+  { on = "!",     run = 'shell "nyagos.exe" --block', for = "windows",
+    desc = "Open nyagos here" },
+  { on = "*",     run = "toggle_all --state=on", desc = "Select all files" },
+  { on = "<C-p>", run = "arrow prev",  desc = "Previous file" },
+  { on = "<C-n>", run = "arrow next",  desc = "Next file" },
+  { on = "<C-a>", run = "arrow top",   desc = "Go to top" },
+  { on = "<C-e>", run = "arrow bot",   desc = "Go to bottom" },
+  { on = "<A-v>", run = "arrow -100%", desc = "Move cursor up one page" },
+  { on = "<C-v>", run = "arrow 100%",  desc = "Move cursor down one page" },
+  { on = "<C-b>", run = "leave", desc = "Back to the parent directory" },
+  { on = "<C-h>", run = "leave", desc = "Back to the parent directory" },
+  { on = "<C-f>", run = "enter", desc = "Enter the child directory" },
+  { on = "<C-m>", run = "plugin smart-enter",
+    desc = "Enter the child directory, or open the file" },
+  { on = "<C-j>", run = "plugin smart-enter",
+    desc = "Enter the child directory, or open the file" },
+  { on = "<Enter>", run = "plugin smart-enter",
+    desc = "Enter the child directory, or open the file" },
+  { on = "l",     run = "plugin smart-enter",
+    desc = "Enter the child directory, or open the file" },
+
+  { on = "y",     run = [ "yank", 'plugin clipboard -- --action=copy' ],
+    desc = "Yank selected files (copy)" },
+  { on = "x",     run = [ "yank --cut", 'plugin clipboard -- --action=copy' ],
+    desc = "Yank selected files (cut)" },
+  { on = "P",     run = [ 'plugin clipboard -- --action=paste' ],
+    desc = "Paste yanked system clipboard files" },
+  { on = [ "c", "v" ],
+    run = "plugin merge-paste",
+    desc = "Paste with conflict prompt (overwrite / merge / skip / rename)" },
+
+  { on = "T",     run = "plugin toggle-pane min-preview",
+    desc = "Show or hide the preview pane" },
+  { on = "o",     run = "plugin open-with-cmd -- block",
+    desc = "Open with command in the terminal" },
+  { on = "O",     run = "plugin open-with-cmd",
+    desc = "Open with command" },
+]
+
+[[input.prepend_keymap]]
+on   = "<C-g>"
+run  = "close"
+desc = "Cancel input"
+
+[tasks]
+prepend_keymap = [
+  { on = "<C-p>", run = "arrow prev", desc = "Previous task" },
+  { on = "<C-n>", run = "arrow next", desc = "Next task" },
+  { on = "<C-j>", run = "inspect",    desc = "Inspect the task" },
+]
+
+[spot]
+prepend_keymap = [
+  { on = "<C-p>", run = "arrow prev", desc = "Previous line" },
+  { on = "<C-n>", run = "arrow next", desc = "Next line" },
+  { on = "<C-b>", run = "swipe prev", desc = "Swipe to previous file" },
+  { on = "<C-f>", run = "swipe next", desc = "Swipe to next file" },
+]
+
+[pick]
+prepend_keymap = [
+  { on = "<C-p>", run = "arrow prev", desc = "Previous option" },
+  { on = "<C-n>", run = "arrow next", desc = "Next option" },
+]
+
+[confirm]
+prepend_keymap = [
+  { on = "<C-p>", run = "arrow prev", desc = "Previous line" },
+  { on = "<C-n>", run = "arrow next", desc = "Next line" },
+]
+
+[help]
+prepend_keymap = [
+   { on = "<C-p>", run = "arrow prev", desc = "Previous line" },
+   { on = "<C-n>", run = "arrow next", desc = "Next line" },
+]

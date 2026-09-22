@@ -1,0 +1,37 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "f703392"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:term-cwd"
+rev = "f703392"
+hash = "ea4d7108bc2c02738ab652064095905f"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "56705e2"
+hash = "7c84fff414a652c86c44523dbb08026f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "f703392"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
+
+[[plugin.deps]]
+use = "XYenon/clipboard"
+rev = "b25ec96"
+hash = "9f07d7de37a430833ef33b92c0bcf8cb"
+
+[[plugin.deps]]
+use = "navysky12/comicthumb"
+rev = "fa398e8"
+hash = "345d65c19cdd4bc0a2210bf1be50038c"
+
+[[plugin.deps]]
+use = "PHONE1X/merge-paste"
+rev = "e95e0bb"
+hash = "dcab65652d246f0c2497435ae1ebbb07"
+
+[flavor]
+deps = []

@@ -1,0 +1,22 @@
+[mgr]
+sort_by = "natural"
+sort_translit = true
+linemode = "size_and_mtime"
+
+[opener]
+prepend_edit = [
+  { run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix",    block = true },
+  { run = "vim %s",  desc = "vi",   for = "windows", block = true },
+]
+
+[which]
+sort_by = "key"
+sort_translit = true
+
+[plugin]
+prepend_preloaders = [
+  { url = "*.cb[7rz]", run = "comicthumb" },
+]
+prepend_previewers = [
+  { url = "*.cb[7rz]", run = "comicthumb" },
+]
